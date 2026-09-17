@@ -51,6 +51,41 @@ python -m http.server 9001
 node check.mjs   # JSON 파싱, JS node --check, index.html 컨테이너, 추천 엔진 단위 테스트
 ```
 
+## 🤖 AI 기능 (API 연동)
+
+세 가지 선택형·플러그형 AI 도우미가 UI에 배선되어 있습니다(헤더의 **AI 도우미** 메뉴):
+
+1. **AI 개호식 상담 챗봇** — 씹기·삼킴 수준과 질환에 맞춰 부드러운 식품을 추천합니다.
+2. **어르신 맞춤 식단 추천 설명** — 왜 이 식단이 어르신께 적합한지 풀어서 설명합니다.
+3. **조리/데우기 안내 생성** — 보관·데우기·삼킴 안전까지 단계별 안내를 생성합니다.
+
+> ⚠️ **의료·영양 처방이 아닙니다.** AI 답변은 참고용 예시입니다. 삼킴장애(연하곤란)나 질환이 있는 경우
+> 식단 변경 전 반드시 의사·언어재활사·영양사 등 전문가와 상담하세요. 모든 AI 답변에 이 안내가 반복 포함됩니다.
+
+**데모 모드 = mock(기본값).** `ai/config.js`의 `AI_ENDPOINT = ""`이면, 상품 카탈로그와 추천 엔진을
+재사용하는 결정론적 오프라인 한국어 MockProvider가 동작합니다 — 네트워크·키·비용 없음. GitHub Pages와
+CI에서 실행되는 것이 이 모드입니다.
+
+**실제 Claude 연동:**
+
+```bash
+cd server
+cp .env.example .env          # 키 입력
+npm install && npm start      # http://localhost:8787/api/ai  (모델: claude-opus-5)
+```
+
+이후 `ai/config.js`를 수정:
+
+```js
+export const AI_ENDPOINT = "http://localhost:8787/api/ai";
+```
+
+브라우저는 `{ task, payload }`를 프록시로 POST하고, 프록시가 Anthropic SDK(`claude-opus-5`, 적응형
+사고)를 호출해 응답을 스트리밍합니다. [`server/README.md`](server/README.md) 참고.
+
+- **API 키는 서버에만 둡니다.** 키는 `server/.env`(git 제외)에 두고 `ANTHROPIC_API_KEY`로 읽습니다.
+  **`ai/config.js`나 브라우저 코드, 저장소에 키를 절대 넣지 마세요.**
+
 ## 데모 모드 경계
 
 **본 서비스는 데모(시연)입니다. 특히:**

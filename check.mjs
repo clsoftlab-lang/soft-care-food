@@ -9,6 +9,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { recommend, scoreProduct, targetSoftness } from "./modules/recommend.js";
+import { AI_ENDPOINT } from "./ai/config.js";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 let pass = 0;
@@ -123,6 +124,49 @@ ok(s1 === s2, "동일 입력은 동일 점수(결정론적)");
 
 // reasons are attached
 ok(hp[0].reasons.length >= 1, "추천 결과에 이유(reasons) 포함");
+
+// ---------- 6. AI layer checks ----------
+console.log("\n[6] AI 계층 검사");
+
+// 6a. node --check on ai/ and server/ (explicitly, in addition to the full walk above).
+for (const dir of ["ai", "server"]) {
+  const full = join(ROOT, dir);
+  let files = [];
+  try { files = walk(full); } catch { /* dir may not exist */ }
+  ok(files.length >= 1, `${dir}/ 폴더에 JS/MJS 파일이 있어야 함`);
+  for (const jsFile of files) {
+    try {
+      execFileSync(process.execPath, ["--check", jsFile], { stdio: "pipe" });
+      console.log("  ✓ node --check " + jsFile.replace(ROOT, ".").replace(/\\/g, "/"));
+      pass++;
+    } catch (e) {
+      ok(false, `문법 오류 ${jsFile}: ${e.stderr ? e.stderr.toString() : e.message}`);
+    }
+  }
+}
+
+// 6b. AI_ENDPOINT must be empty (demo=mock; real endpoint is opt-in and never committed).
+ok(AI_ENDPOINT === "", `ai/config.js 의 AI_ENDPOINT 는 비어("") 있어야 함 (현재: ${JSON.stringify(AI_ENDPOINT)})`);
+
+// 6c. No real Anthropic API key committed anywhere.
+const KEY_RE = new RegExp("sk-" + "ant-[A-Za-z0-9_-]{20,}");
+function walkAll(dir) {
+  const out = [];
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (e.name === "node_modules" || e.name === ".git" || e.name === "dist") continue;
+    const full = join(dir, e.name);
+    if (e.isDirectory()) out.push(...walkAll(full));
+    else if (/\.(mjs|js|json|md|html|css|txt|example)$/.test(e.name) || e.name === ".env.example") out.push(full);
+  }
+  return out;
+}
+let keyHits = 0;
+for (const f of walkAll(ROOT)) {
+  const rel = f.replace(ROOT, ".").replace(/\\/g, "/");
+  if (rel.endsWith("/check.mjs")) continue; // this file legitimately holds the split pattern string
+  if (KEY_RE.test(readFileSync(f, "utf8"))) { keyHits++; ok(false, `실제 API 키 형식이 발견됨: ${rel}`); }
+}
+ok(keyHits === 0, "저장소에 실제 Anthropic API 키 형식이 없어야 함");
 
 // ---------- Summary ----------
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);

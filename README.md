@@ -55,17 +55,57 @@ python -m http.server 9001
 node check.mjs   # JSON parses, node --check on JS, index.html containers, recommender unit tests
 ```
 
+## 🤖 AI features (API integration)
+
+Three optional, pluggable AI helpers are wired into the UI (open **AI 도우미** in the header):
+
+1. **AI care-meal chatbot** — recommends soft foods by chewing/swallowing level and conditions.
+2. **Personalized meal-plan explanation** — explains *why* the recommended meals suit the elder.
+3. **Cooking / reheating guidance** — generates step-by-step prep, heating, and swallow-safety notes.
+
+> ⚠️ **Not medical or nutritional advice.** AI output is illustrative only. For dysphagia
+> (swallowing difficulty) or any medical condition, consult a physician, speech-language
+> pathologist, or registered dietitian **before** changing a diet. Every AI answer repeats this note.
+
+**Demo mode = mock (default).** With `ai/config.js` → `AI_ENDPOINT = ""`, the app uses a deterministic,
+offline Korean MockProvider that reuses the product catalog and the meal recommender — no network, no
+key, no cost. This is what runs on GitHub Pages and in CI.
+
+**Enable real Claude:**
+
+```bash
+cd server
+cp .env.example .env          # add your key
+npm install && npm start      # proxy on http://localhost:8787/api/ai  (model: claude-opus-5)
+```
+
+Then set `ai/config.js`:
+
+```js
+export const AI_ENDPOINT = "http://localhost:8787/api/ai";
+```
+
+The browser POSTs `{ task, payload }` to the proxy, which calls the Anthropic SDK
+(`claude-opus-5`, adaptive thinking) and streams the reply back. See [`server/README.md`](server/README.md).
+
+- **API keys are server-side only.** The key lives in `server/.env` (git-ignored) and is read from
+  `ANTHROPIC_API_KEY`. **Never put a key in `ai/config.js`, any browser code, or the repository.**
+
 ## Project structure
 
 ```
 index.html            # app shell + required containers
 styles.css            # mobile-first, light/dark
-app.js                # hash router + views
+app.js                # hash router + views (+ AI wiring)
 modules/recommend.js  # pure recommendation engine (unit-tested)
 modules/store.js      # localStorage state (try/catch + demo reset)
 modules/svg.js        # inline-SVG art (bowls, softness meter, logo)
+ai/config.js          # AI_ENDPOINT ("" = mock/demo; URL = real backend)
+ai/ai.js              # askAI(): deterministic mock, or streams from the proxy
+server/index.mjs      # Node proxy: POST /api/ai -> Anthropic SDK (key stays server-side)
+server/.env.example   # copy to .env, add ANTHROPIC_API_KEY (never committed)
 data/*.json           # products, plans, survey, meta
-check.mjs             # self-check / unit tests
+check.mjs             # self-check / unit tests (+ AI-layer checks)
 .github/workflows/ci.yml  # CI runs node check.mjs
 ```
 

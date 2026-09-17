@@ -6,6 +6,8 @@
 import * as store from "./modules/store.js";
 import { recommend, targetSoftness } from "./modules/recommend.js";
 import { productArt, softnessMeter, logo, starRating } from "./modules/svg.js";
+import { askAI } from "./ai/ai.js";
+import { AI_ENDPOINT } from "./ai/config.js";
 
 const state = { products: [], plans: [], survey: null, meta: null };
 
@@ -93,6 +95,7 @@ function route() {
   if (path === "cart") return renderCart();
   if (path === "plans") return renderPlans();
   if (path === "survey") return renderSurvey();
+  if (path === "ai") return renderAi();
   if (path === "wishlist") return renderWishlist();
   return renderCatalog();
 }
@@ -230,13 +233,18 @@ function renderProduct(id) {
         </table></section>
       <section class="panel"><h3>원재료</h3><p>${p.ingredients.map(esc).join(", ")}</p>
         <p class="allergen">알레르기 유발: ${p.allergens.length ? p.allergens.map(esc).join(", ") : "해당 없음"}</p></section>
-      <section class="panel"><h3>데우는 법</h3><p>${esc(p.heating)}</p></section>
+      <section class="panel"><h3>데우는 법</h3><p>${esc(p.heating)}</p>
+        <button class="btn small primary" id="ai-cook-detail">🤖 AI 조리·데우기 안내</button>
+        <pre id="ai-cook-detail-out" class="ai-out" hidden></pre></section>
     </div>
     <section class="panel reviews"><h3>리뷰 (${p.reviewCount})</h3>
       ${p.reviews.map((r) => `<div class="review"><div class="meta-row">${starRating(r.rating)} <strong>${esc(r.author)}</strong></div><p>${esc(r.text)}</p></div>`).join("")}
       <p class="muted small">※ 데모용 가상 리뷰입니다.</p>
     </section>`;
   wireCards();
+  const cookBtn = el("ai-cook-detail");
+  if (cookBtn) cookBtn.addEventListener("click", (e) =>
+    runAI("cooking", { product: p, products: state.products }, el("ai-cook-detail-out"), e.currentTarget));
 }
 
 // ---------------- Cart + simulated checkout ----------------
@@ -363,6 +371,8 @@ function showRecommendations(answers) {
       <h2>추천 결과</h2>
       <p>씹기 수준 ${answers.chewing} · 삼킴 수준 ${answers.swallowing} → 권장 연화 <strong>${t}단계 이상</strong>
       ${answers.allergies.length ? ` · 제외 알레르기: ${answers.allergies.map(esc).join(", ")}` : ""}</p>
+      <button class="btn small primary" id="ai-explain-rec">🤖 AI 맞춤 설명 보기</button>
+      <pre id="ai-explain-rec-out" class="ai-out" hidden></pre>
     </div>
     ${results.length === 0 ? '<p class="empty">조건에 맞는 상품이 없습니다. 알레르기 조건을 조정해 보세요.</p>' :
     `<div class="grid">${results.map(({ product, reasons }) => `<article class="card rec">
@@ -375,6 +385,9 @@ function showRecommendations(answers) {
           <button class="btn small primary" data-add="${product.id}">담기</button></div>
       </div></article>`).join("")}</div>`}`;
   box.querySelectorAll("[data-add]").forEach((b) => b.addEventListener("click", () => { store.addToCart(b.dataset.add, 1); toast("장바구니에 담았습니다"); }));
+  const explainBtn = el("ai-explain-rec");
+  if (explainBtn) explainBtn.addEventListener("click", (e) =>
+    runAI("explain", { survey: answers, products: state.products }, el("ai-explain-rec-out"), e.currentTarget));
   box.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -386,6 +399,114 @@ function renderWishlist() {
     ${items.length === 0 ? '<p class="empty">찜한 상품이 없습니다. <a href="#/">상품 보러가기</a></p>' :
     `<div class="grid">${items.map(card).join("")}</div>`}`;
   wireCards();
+}
+
+// ---------------- AI layer (mock by default; real via backend proxy) ----------------
+const aiModeLabel = () => (AI_ENDPOINT ? "실시간 AI 연동" : "데모 모드(mock)");
+
+// Stream an askAI() call into an output element, toggling a button's busy state.
+async function runAI(task, payload, outputEl, btn) {
+  if (!outputEl) return;
+  const label = btn ? btn.textContent : "";
+  if (btn) { btn.disabled = true; btn.textContent = "생성 중…"; }
+  outputEl.hidden = false;
+  outputEl.textContent = "";
+  outputEl.classList.add("streaming");
+  try {
+    await askAI(task, payload, { onToken: (chunk) => { outputEl.textContent += chunk; } });
+  } catch (err) {
+    outputEl.textContent = "AI 응답을 가져오지 못했습니다: " + (err && err.message ? err.message : String(err));
+  } finally {
+    outputEl.classList.remove("streaming");
+    if (btn) { btn.disabled = false; btn.textContent = label; }
+  }
+}
+
+function aiSurveyFields() {
+  const q = state.survey.questions;
+  const prev = store.getState().survey || {};
+  const field = (question) => {
+    const type = question.type === "scale" ? "radio" : "checkbox";
+    const checked = (o) => (question.type === "scale"
+      ? (prev[question.id] == o.value ? "checked" : "")
+      : ((prev[question.id] || []).includes(o.value) ? "checked" : ""));
+    return `<fieldset><legend>${esc(question.label)}</legend>
+      <div class="scale wrap">${question.options.map((o) => `<label class="chip">
+        <input type="${type}" name="${question.id}" value="${esc(String(o.value))}" ${checked(o)}>
+        <span>${esc(o.label)}</span></label>`).join("")}</div></fieldset>`;
+  };
+  return q.map(field).join("");
+}
+
+function renderAi() {
+  const prodOpts = state.products.map((p) => `<option value="${p.id}">${esc(p.name)}</option>`).join("");
+  el("view").innerHTML = `
+    <h1>AI 케어식 도우미 <span class="ai-badge">${esc(aiModeLabel())}</span></h1>
+    <div class="disclaimer" role="note">⚠️ <strong>건강 안내:</strong> 아래 AI 안내는 의료·영양 처방이 아닌 참고용입니다.
+      삼킴장애(연하곤란)가 있다면 반드시 의사·언어재활사·영양사 등 전문가와 먼저 상담하세요.</div>
+
+    <section class="panel ai-feature">
+      <h2>① AI 개호식 상담 챗봇</h2>
+      <p class="muted small">어르신의 씹기·삼킴 수준과 질환·알레르기를 입력하면 맞춤 연화식과 식사 방법을 안내합니다.</p>
+      <form id="ai-chat-form" class="survey">
+        ${aiSurveyFields()}
+        <label class="ai-msg">추가로 궁금한 점(선택)
+          <textarea name="message" rows="2" placeholder="예: 죽이 자꾸 사레들려요. 더 걸쭉한 걸 원해요."></textarea></label>
+        <button class="btn primary" type="submit">AI 상담 받기</button>
+      </form>
+      <pre id="ai-chat-out" class="ai-out" hidden></pre>
+    </section>
+
+    <section class="panel ai-feature">
+      <h2>② 어르신 맞춤 식단 추천 설명</h2>
+      <p class="muted small">저장된 설문 결과를 바탕으로, 왜 이런 식단이 어르신께 적합한지 AI가 풀어서 설명합니다.</p>
+      <button class="btn primary" id="ai-explain-btn">AI 설명 생성</button>
+      <a class="btn" href="#/survey">설문 먼저 하기</a>
+      <pre id="ai-explain-out" class="ai-out" hidden></pre>
+    </section>
+
+    <section class="panel ai-feature">
+      <h2>③ 조리 / 데우기 안내 생성</h2>
+      <p class="muted small">상품을 선택하면 보관·데우기·삼킴 안전까지 단계별 안내를 생성합니다.</p>
+      <label>상품 선택 <select id="ai-cook-select">${prodOpts}</select></label>
+      <button class="btn primary" id="ai-cook-btn">안내 생성</button>
+      <pre id="ai-cook-out" class="ai-out" hidden></pre>
+    </section>`;
+
+  // ① chatbot
+  el("ai-chat-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const payload = {
+      chewing: Number(fd.get("chewing") || 1),
+      swallowing: Number(fd.get("swallowing") || 1),
+      conditions: fd.getAll("conditions"),
+      allergies: fd.getAll("allergies"),
+      goals: fd.getAll("goals"),
+      message: fd.get("message") || "",
+      products: state.products,
+    };
+    runAI("chat", payload, el("ai-chat-out"), e.submitter);
+  });
+
+  // ② explanation
+  el("ai-explain-btn").addEventListener("click", (e) => {
+    const survey = store.getState().survey;
+    const out = el("ai-explain-out");
+    if (!survey) {
+      out.hidden = false;
+      out.textContent = "먼저 ‘맞춤설문’을 완료하면 저장된 결과로 설명을 생성할 수 있습니다.";
+      return;
+    }
+    runAI("explain", { survey, products: state.products }, out, e.currentTarget);
+  });
+
+  // ③ cooking guidance
+  el("ai-cook-btn").addEventListener("click", (e) => {
+    const id = el("ai-cook-select").value;
+    const product = state.products.find((p) => p.id === id);
+    runAI("cooking", { product, products: state.products }, el("ai-cook-out"), e.currentTarget);
+  });
 }
 
 // ---------------- Toast ----------------

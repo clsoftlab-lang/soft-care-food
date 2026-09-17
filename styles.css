@@ -224,3 +224,14 @@ h3 { font-size: 1.05rem; margin: .3rem 0; }
 
 /* Tables wrap on narrow screens */
 .panel { overflow-x: auto; }
+
+/* ---------------- AI layer ---------------- */
+.ai-badge { font-size: .72rem; vertical-align: middle; padding: .15rem .55rem; border-radius: 999px; background: var(--accent-weak); color: var(--accent-strong); border: 1px solid var(--accent); font-weight: 600; }
+.ai-feature { margin-top: 1rem; }
+.ai-feature h2 { margin-top: 0; }
+.ai-feature .btn { margin-right: .4rem; margin-top: .2rem; }
+.ai-msg { display: block; margin: .6rem 0; font-size: .9rem; color: var(--muted); }
+.ai-msg textarea { display: block; width: 100%; margin-top: .3rem; padding: .5rem .6rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); font: inherit; resize: vertical; }
+.ai-out { margin-top: .8rem; padding: .9rem 1rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); white-space: pre-wrap; word-break: break-word; font: inherit; line-height: 1.6; max-width: 100%; overflow-x: auto; }
+.ai-out.streaming::after { content: "▍"; animation: ai-blink 1s steps(2) infinite; color: var(--accent-strong); }
+@keyframes ai-blink { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
