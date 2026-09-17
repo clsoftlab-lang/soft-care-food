@@ -235,3 +235,9 @@ h3 { font-size: 1.05rem; margin: .3rem 0; }
 .ai-out { margin-top: .8rem; padding: .9rem 1rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); white-space: pre-wrap; word-break: break-word; font: inherit; line-height: 1.6; max-width: 100%; overflow-x: auto; }
 .ai-out.streaming::after { content: "▍"; animation: ai-blink 1s steps(2) infinite; color: var(--accent-strong); }
 @keyframes ai-blink { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+
+/* Autonomous on-load daily digest (unobtrusive) */
+.daily-digest { margin: 1rem 0; border-left: 3px solid var(--accent); }
+.daily-digest .digest-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; }
+.daily-digest h2 { margin: 0; font-size: 1.05rem; }
+.daily-digest .ai-out { max-height: 15rem; overflow-y: auto; }

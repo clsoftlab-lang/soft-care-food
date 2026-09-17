@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 CLSOFTLAB (씨엘소프트랩), Dr. Lee Il-guk (이일국)
+#
+# Cloudflare Workers config for the free, unmanned (무인) Soft Care Food AI proxy.
+#
+# Deploy:
+#   cd server
+#   npx wrangler secret put ANTHROPIC_API_KEY   # paste your key (stored ENCRYPTED, never in git)
+#   npx wrangler deploy
+#
+# The key is a Worker SECRET — do NOT put it here or anywhere in the repo.
+# Optional non-secret overrides go under [vars] below.
+
+name = "soft-care-food-ai"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Optional, non-secret overrides (the API key is a secret, set via `wrangler secret put`):
+[vars]
+# AI_MODEL = "claude-haiku-4-5"   # cost-first default; raise to claude-sonnet-5 / claude-opus-5
+# AI_EFFORT = "low"               # only used by non-Haiku models
+# CORS_ORIGIN = "https://clsoftlab-lang.github.io"

@@ -168,6 +168,31 @@ for (const f of walkAll(ROOT)) {
 }
 ok(keyHits === 0, "저장소에 실제 Anthropic API 키 형식이 없어야 함");
 
+// 6d. .gitignore must exclude .env (secrets never committed).
+let gitignore = "";
+try { gitignore = readFileSync(join(ROOT, ".gitignore"), "utf8"); } catch { /* missing */ }
+ok(/(^|\n)\s*(\*\*\/)?\.env(\s|$)/.test(gitignore), ".gitignore 가 .env 를 제외해야 함");
+
+// 6e. No committed .env anywhere (only .env.example is allowed).
+let envHits = 0;
+function walkFiles(dir) {
+  const out = [];
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (e.name === "node_modules" || e.name === ".git" || e.name === "dist") continue;
+    const full = join(dir, e.name);
+    if (e.isDirectory()) out.push(...walkFiles(full));
+    else out.push(full);
+  }
+  return out;
+}
+for (const f of walkFiles(ROOT)) {
+  const base = f.replace(/\\/g, "/").split("/").pop();
+  if (base === ".env" || (base.startsWith(".env.") && base !== ".env.example")) {
+    envHits++; ok(false, `.env 파일이 커밋되면 안 됨: ${f.replace(ROOT, ".").replace(/\\/g, "/")}`);
+  }
+}
+ok(envHits === 0, "저장소에 커밋된 .env 파일이 없어야 함(.env.example 만 허용)");
+
 // ---------- Summary ----------
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);
 if (fail > 0) {

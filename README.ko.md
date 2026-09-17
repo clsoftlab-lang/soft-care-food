@@ -71,7 +71,7 @@ CI에서 실행되는 것이 이 모드입니다.
 ```bash
 cd server
 cp .env.example .env          # 키 입력
-npm install && npm start      # http://localhost:8787/api/ai  (모델: claude-opus-5)
+npm install && npm start      # http://localhost:8787/api/ai  (모델: claude-haiku-4-5)
 ```
 
 이후 `ai/config.js`를 수정:
@@ -80,11 +80,44 @@ npm install && npm start      # http://localhost:8787/api/ai  (모델: claude-op
 export const AI_ENDPOINT = "http://localhost:8787/api/ai";
 ```
 
-브라우저는 `{ task, payload }`를 프록시로 POST하고, 프록시가 Anthropic SDK(`claude-opus-5`, 적응형
-사고)를 호출해 응답을 스트리밍합니다. [`server/README.md`](server/README.md) 참고.
+브라우저는 `{ task, payload }`를 프록시로 POST하고, 프록시가 Anthropic SDK(비용 우선 기본
+`claude-haiku-4-5`)를 호출해 응답을 스트리밍합니다. [`server/README.md`](server/README.md) 참고.
 
 - **API 키는 서버에만 둡니다.** 키는 `server/.env`(git 제외)에 두고 `ANTHROPIC_API_KEY`로 읽습니다.
   **`ai/config.js`나 브라우저 코드, 저장소에 키를 절대 넣지 마세요.**
+
+## ⚙️ 고도화 — 무인·저비용 실 AI 연동
+
+이 앱은 **무인(autonomous)**으로 **실제 Claude**를 **저비용** 기본값으로 돌리도록 고도화되었습니다.
+
+**무인 기능.** 홈 화면 진입 시 "🍚 어르신 맞춤 오늘의 식단 추천" 요약이 **자동 생성**됩니다 —
+앱 자체 추천 엔진을 `askAI`로 호출해 만들므로 **오프라인(mock)에서도 스스로 동작**합니다. 저장된
+맞춤설문이 있으면 이를, 없으면 합리적 기본값을 사용하고, 방해되지 않게(`aria-live`) 표시하며,
+모든 AI 답변과 마찬가지로 **의료·영양 처방이 아님**(삼킴장애는 전문가 상담)을 명시합니다.
+
+**비용 모델.** 기본 **`claude-haiku-4-5`**(약 **$1 / $5 per MTok** 입력/출력) + 안정적인 태스크별
+시스템 프롬프트에 **프롬프트 캐싱** + 적정 **출력 상한**(~700 토큰) + **월 토큰 예산**
+(`AI_MONTHLY_TOKEN_CAP`, 기본 2,000,000) + **IP당 속도 제한**(20/분). 품질이 필요하면 언제든
+`AI_MODEL=claude-sonnet-5` 또는 `claude-opus-5`로 올릴 수 있습니다.
+
+**1,000요청당 대략 비용**(Haiku 4.5, 짧은 캐시 시스템 프롬프트 + 호출당 입력 ~400 / 출력 ~400 토큰
+가정): 입력 ≈ 0.4 MTok × $1 ≈ **$0.40**, 출력 ≈ 0.4 MTok × $5 ≈ **$2.00** →
+**약 $2~3 / 1,000요청**, 프롬프트 캐싱으로 반복 호출의 입력 비용은 더 줄어듭니다.
+
+**무료 원-디플로이(무인).** **Cloudflare Workers** 변형(`server/worker.js` + `server/wrangler.toml`)은
+무료 티어에서 관리할 서버 없이 동작합니다:
+
+```bash
+cd server
+npx wrangler secret put ANTHROPIC_API_KEY   # 암호화 저장, 저장소에 절대 안 들어감
+npx wrangler deploy                          # -> https://<name>.workers.dev/api/ai
+```
+
+**절대 멈추지 않음.** 엔드포인트 실패·`429 {fallback:true}`(예산/속도 제한)·네트워크 장애 시
+`ai/ai.js`가 **오프라인 mock으로 자동 폴백**합니다 — 무인 상태로도 앱이 계속 동작합니다.
+
+**사고/effort.** Haiku 4.5는 `thinking`/effort를 보내지 않습니다(미지원). 그 외 모델은 적응형 사고 +
+`effort`(기본 `low`). **API 키는 서버에만 — 브라우저·저장소에 절대 넣지 않습니다.**
 
 ## 데모 모드 경계
 

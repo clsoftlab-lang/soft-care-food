@@ -76,7 +76,7 @@ key, no cost. This is what runs on GitHub Pages and in CI.
 ```bash
 cd server
 cp .env.example .env          # add your key
-npm install && npm start      # proxy on http://localhost:8787/api/ai  (model: claude-opus-5)
+npm install && npm start      # proxy on http://localhost:8787/api/ai  (model: claude-haiku-4-5)
 ```
 
 Then set `ai/config.js`:
@@ -86,10 +86,45 @@ export const AI_ENDPOINT = "http://localhost:8787/api/ai";
 ```
 
 The browser POSTs `{ task, payload }` to the proxy, which calls the Anthropic SDK
-(`claude-opus-5`, adaptive thinking) and streams the reply back. See [`server/README.md`](server/README.md).
+(cost-first `claude-haiku-4-5` by default, streamed) and streams the reply back.
+See [`server/README.md`](server/README.md).
 
 - **API keys are server-side only.** The key lives in `server/.env` (git-ignored) and is read from
   `ANTHROPIC_API_KEY`. **Never put a key in `ai/config.js`, any browser code, or the repository.**
+
+## ⚙️ 고도화 — 무인·저비용 실 AI 연동
+
+This app is upgraded to run **unmanned (무인)** on **real Claude** at a **cost-efficient** default.
+
+**Autonomous feature.** The home page **auto-generates** an "🍚 어르신 맞춤 오늘의 식단 추천"
+digest on load — built from the app's own meal recommender via `askAI`, so it self-runs even
+offline (mock). It uses the saved survey when present, else a sensible default, is unobtrusive
+(`aria-live`), and, like every AI answer, is labeled **not medical/nutritional advice** (dysphagia →
+consult a professional).
+
+**Cost model.** Default **`claude-haiku-4-5`** (≈ **$1 / $5 per MTok** in/out) + **prompt caching**
+on the stable per-task system prompt + a modest **output cap** (~700 tokens) + a **monthly token
+budget** (`AI_MONTHLY_TOKEN_CAP`, default 2,000,000) and a **per-IP rate limit** (20/min). Raise
+quality any time with `AI_MODEL=claude-sonnet-5` or `claude-opus-5`.
+
+**Rough per-1,000-requests estimate** (Haiku 4.5, a short cached system prompt + ~400 in / ~400 out
+tokens per call): input ≈ 0.4 MTok × $1 ≈ **$0.40**, output ≈ 0.4 MTok × $5 ≈ **$2.00** →
+**≈ $2–3 per 1,000 requests**, and prompt caching trims the input side further on repeat calls.
+
+**Free one-deploy (무인).** A **Cloudflare Workers** variant (`server/worker.js` + `server/wrangler.toml`)
+runs on the free tier with no server to babysit:
+
+```bash
+cd server
+npx wrangler secret put ANTHROPIC_API_KEY   # stored encrypted, never in git
+npx wrangler deploy                          # -> https://<name>.workers.dev/api/ai
+```
+
+**Never breaks.** If the endpoint fails, returns `429 {fallback:true}` (budget/rate limit), or the
+network is down, `ai/ai.js` **auto-falls back to the offline mock** — the app keeps working unmanned.
+
+**Thinking/effort.** Haiku 4.5 sends no `thinking`/effort (unsupported); other models get adaptive
+thinking + `effort` (default `low`). **API keys stay server-side only — never in the browser or repo.**
 
 ## Project structure
 

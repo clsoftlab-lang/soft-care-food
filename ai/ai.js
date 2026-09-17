@@ -33,11 +33,20 @@ const won = (n) => Number(n).toLocaleString("ko-KR") + "원";
  * @returns {Promise<string>}
  */
 export async function askAI(task, payload = {}, { onToken } = {}) {
-  if (!AI_ENDPOINT) {
-    const text = await mockRespond(task, payload);
-    return streamSimulated(text, onToken);
+  // REAL mode: try the backend first, but AUTO-FALL BACK to the offline mock on any
+  // failure / 429 {fallback:true} / network error, so the app never breaks (무인).
+  if (AI_ENDPOINT) {
+    try {
+      return await streamFromBackend(task, payload, onToken);
+    } catch (err) {
+      // Swallow and fall through to the deterministic mock below.
+      if (typeof console !== "undefined" && console.warn) {
+        console.warn("[soft-care-food] AI backend unavailable — falling back to offline mock:", err && err.message ? err.message : err);
+      }
+    }
   }
-  return streamFromBackend(task, payload, onToken);
+  const text = await mockRespond(task, payload);
+  return streamSimulated(text, onToken);
 }
 
 // ---------------- Real backend (streaming) ----------------
@@ -47,6 +56,9 @@ async function streamFromBackend(task, payload, onToken) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ task, payload }),
   });
+  // 429 (rate limit / monthly cap) and any non-OK status -> signal fallback to the mock.
+  // (The proxy/worker return { fallback: true } JSON; we don't need to parse it — any
+  //  non-OK response triggers the mock fallback in askAI.)
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
     throw new Error(`AI 백엔드 오류 ${res.status}${detail ? ": " + detail : ""}`);

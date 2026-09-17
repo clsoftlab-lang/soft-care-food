@@ -103,6 +103,12 @@ function route() {
 // ---------------- Catalog ----------------
 const filters = { softness: "", purpose: "", category: "", sort: "recommend" };
 
+// Autonomous feature: an on-load, self-running "어르신 맞춤 오늘의 식단 추천" digest.
+// Built from the app's own meal recommender + askAI (works offline via the mock).
+// Runs once per page load; the result is cached so catalog re-renders (search/filter) reuse it.
+let dailyDigestText = "";
+let dailyDigestStarted = false;
+
 function renderCatalog() {
   const q = el("search").value.trim().toLowerCase();
   let list = state.products.slice();
@@ -146,6 +152,16 @@ function renderCatalog() {
       ⚠️ <strong>건강 안내:</strong> 본 서비스는 의료·영양 처방이 아닙니다. 특히 삼킴장애(연하곤란)가 있는 경우
       식단 변경 전 반드시 의사·언어재활사·영양사 등 전문가와 상담하세요.
     </div>
+    <section class="panel daily-digest" aria-labelledby="digest-title">
+      <div class="digest-head">
+        <h2 id="digest-title">🍚 어르신 맞춤 오늘의 식단 추천</h2>
+        <a class="btn small" href="#/survey">내 설문으로 맞춤 강화</a>
+      </div>
+      <p class="muted small">${store.getState().survey
+        ? "저장된 맞춤설문을 바탕으로 자동 생성했습니다."
+        : "일반 예시 상태로 자동 생성했습니다. 맞춤설문을 완료하면 더 정확해집니다."} <span class="ai-badge">${esc(aiModeLabel())}</span></p>
+      <pre id="digest-out" class="ai-out" role="status" aria-live="polite" aria-busy="true"></pre>
+    </section>
     <div class="toolbar">
       <label>부드러움<select id="f-soft"><option value="">전체 단계</option>${softOpts}</select></label>
       <label>영양목적<select id="f-purp"><option value="">전체</option>${purpOpts}</select></label>
@@ -167,6 +183,41 @@ function renderCatalog() {
   el("f-cat").addEventListener("change", (e) => { filters.category = e.target.value; renderCatalog(); });
   el("f-sort").addEventListener("change", (e) => { filters.sort = e.target.value; renderCatalog(); });
   wireCards();
+  runDailyDigest();
+}
+
+// Autonomous "오늘의 식단 추천": self-runs on load via the meal recommender + askAI.
+// Uses the saved survey when present, else a sensible default. Offline-safe (mock),
+// runs once per page load, and every answer already carries the NOT-medical disclaimer.
+function runDailyDigest() {
+  const out = el("digest-out");
+  if (!out) return;
+  if (dailyDigestText) { // reuse cached result across catalog re-renders
+    out.textContent = dailyDigestText;
+    out.setAttribute("aria-busy", "false");
+    return;
+  }
+  if (dailyDigestStarted) return;
+  dailyDigestStarted = true;
+
+  const saved = store.getState().survey;
+  const survey = saved || { chewing: 2, swallowing: 2, conditions: [], allergies: [], goals: [] };
+  const payload = { ...survey, survey, products: state.products, limit: 3 };
+
+  out.textContent = "";
+  out.classList.add("streaming");
+  out.setAttribute("aria-busy", "true");
+  askAI("chat", payload, { onToken: (chunk) => { out.textContent += chunk; } })
+    .then((full) => { dailyDigestText = full; })
+    .catch((err) => {
+      // Should be rare — askAI already auto-falls back to the mock. Fail soft, never break.
+      dailyDigestStarted = false;
+      out.textContent = "오늘의 추천을 불러오지 못했습니다. 상단 메뉴에서 ‘맞춤설문’으로 직접 추천을 받아보실 수 있습니다.";
+    })
+    .finally(() => {
+      out.classList.remove("streaming");
+      out.setAttribute("aria-busy", "false");
+    });
 }
 
 function card(p) {
