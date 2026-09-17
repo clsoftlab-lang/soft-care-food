@@ -1,0 +1,135 @@
+{
+  "questions": [
+    {
+      "id": "chewing",
+      "label": "씹기(저작)는 어느 정도 편하신가요?",
+      "type": "scale",
+      "options": [
+        {
+          "value": 1,
+          "label": "일반식도 잘 씹으심"
+        },
+        {
+          "value": 2,
+          "label": "단단한 음식이 불편함"
+        },
+        {
+          "value": 3,
+          "label": "잇몸/혀로 으깨야 함"
+        },
+        {
+          "value": 4,
+          "label": "거의 씹지 못함"
+        }
+      ]
+    },
+    {
+      "id": "swallowing",
+      "label": "삼킴(연하)은 어떠신가요?",
+      "type": "scale",
+      "options": [
+        {
+          "value": 1,
+          "label": "문제 없음"
+        },
+        {
+          "value": 2,
+          "label": "가끔 사레들림"
+        },
+        {
+          "value": 3,
+          "label": "자주 사레들림"
+        },
+        {
+          "value": 4,
+          "label": "삼킴이 매우 어려움"
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "label": "해당되는 질환을 선택하세요 (복수 선택)",
+      "type": "multi",
+      "options": [
+        {
+          "value": "당뇨",
+          "label": "당뇨"
+        },
+        {
+          "value": "고혈압",
+          "label": "고혈압"
+        },
+        {
+          "value": "신장질환",
+          "label": "신장질환"
+        },
+        {
+          "value": "저작곤란",
+          "label": "저작곤란"
+        },
+        {
+          "value": "근감소",
+          "label": "근감소/회복기"
+        }
+      ]
+    },
+    {
+      "id": "allergies",
+      "label": "알레르기가 있는 재료를 선택하세요 (복수 선택)",
+      "type": "multi",
+      "options": [
+        {
+          "value": "우유",
+          "label": "우유"
+        },
+        {
+          "value": "대두",
+          "label": "대두"
+        },
+        {
+          "value": "밀",
+          "label": "밀"
+        },
+        {
+          "value": "계란",
+          "label": "계란"
+        },
+        {
+          "value": "생선",
+          "label": "생선"
+        },
+        {
+          "value": "갑각류",
+          "label": "갑각류"
+        },
+        {
+          "value": "견과류",
+          "label": "견과류"
+        },
+        {
+          "value": "전복",
+          "label": "전복"
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "label": "우선하고 싶은 영양 목표는? (복수 선택)",
+      "type": "multi",
+      "options": [
+        {
+          "value": "고단백",
+          "label": "고단백"
+        },
+        {
+          "value": "저염",
+          "label": "저염"
+        },
+        {
+          "value": "삼킴보조",
+          "label": "삼킴보조"
+        }
+      ]
+    }
+  ]
+}

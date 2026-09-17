@@ -1,0 +1,1622 @@
+[
+  {
+    "id": "scf-001",
+    "name": "부드러운 소고기 야채죽",
+    "category": "죽/밥류",
+    "softness": 3,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 6500,
+    "kcal": 210,
+    "protein": 14,
+    "sodium": 320,
+    "servingWeight": 200,
+    "ingredients": [
+      "쌀",
+      "소고기",
+      "당근",
+      "애호박",
+      "표고버섯",
+      "참기름"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "냉동 상태로 전자레인지 3분 또는 중탕 8분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 부드러운 소고기 야채죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 8,
+    "reviews": [
+      {
+        "author": "든든한아들",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "3단계 · 혀로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-002",
+    "name": "삼킴편한 단호박 퓨레",
+    "category": "죽/밥류",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조",
+      "저염"
+    ],
+    "price": 4800,
+    "kcal": 150,
+    "protein": 4,
+    "sodium": 90,
+    "servingWeight": 210,
+    "ingredients": [
+      "단호박",
+      "현미",
+      "해바라기씨오일"
+    ],
+    "allergens": [],
+    "heating": "전자레인지 2분 후 잘 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 삼킴편한 단호박 퓨레은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 15,
+    "reviews": [
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 3,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "이며느리",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-003",
+    "name": "연화 닭가슴살 곤죽",
+    "category": "죽/밥류",
+    "softness": 3,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 6900,
+    "kcal": 230,
+    "protein": 20,
+    "sodium": 210,
+    "servingWeight": 220,
+    "ingredients": [
+      "쌀",
+      "닭가슴살",
+      "양파",
+      "시금치"
+    ],
+    "allergens": [],
+    "heating": "전자레인지 3분 또는 냄비 데우기 7분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 연화 닭가슴살 곤죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 22,
+    "reviews": [
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "정손녀",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "3단계 · 혀로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-004",
+    "name": "무른 흰살생선 무조림",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 7200,
+    "kcal": 160,
+    "protein": 18,
+    "sodium": 260,
+    "servingWeight": 230,
+    "ingredients": [
+      "대구살",
+      "무",
+      "다시마",
+      "생강"
+    ],
+    "allergens": [
+      "생선"
+    ],
+    "heating": "중탕 8분 권장, 국물째 데우기",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 흰살생선 무조림은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 29,
+    "reviews": [
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "정손녀",
+        "rating": 5,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "최요양사",
+        "rating": 4,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-005",
+    "name": "혀로 으깨는 두부계란찜",
+    "category": "반찬",
+    "softness": 3,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 4500,
+    "kcal": 140,
+    "protein": 12,
+    "sodium": 240,
+    "servingWeight": 240,
+    "ingredients": [
+      "두부",
+      "계란",
+      "다시육수",
+      "쪽파"
+    ],
+    "allergens": [
+      "대두",
+      "계란"
+    ],
+    "heating": "전자레인지 2분 30초",
+    "description": "혀로 눌러 으깰 수 있는 무름. 혀로 으깨는 두부계란찜은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 36,
+    "reviews": [
+      {
+        "author": "정손녀",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "최요양사",
+        "rating": 3,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "한복지사",
+        "rating": 4,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "3단계 · 혀로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-006",
+    "name": "부드러운 가지나물",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "저염"
+    ],
+    "price": 3900,
+    "kcal": 90,
+    "protein": 3,
+    "sodium": 180,
+    "servingWeight": 250,
+    "ingredients": [
+      "가지",
+      "들기름",
+      "마늘",
+      "간장"
+    ],
+    "allergens": [
+      "대두",
+      "밀"
+    ],
+    "heating": "전자레인지 1분 30초 또는 팬에 살짝",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 부드러운 가지나물은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 43,
+    "reviews": [
+      {
+        "author": "최요양사",
+        "rating": 3,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "한복지사",
+        "rating": 4,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "조가족",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-007",
+    "name": "연화 소고기장조림",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 6800,
+    "kcal": 170,
+    "protein": 19,
+    "sodium": 340,
+    "servingWeight": 260,
+    "ingredients": [
+      "소고기",
+      "간장",
+      "마늘",
+      "꽈리고추"
+    ],
+    "allergens": [
+      "대두",
+      "밀"
+    ],
+    "heating": "전자레인지 2분, 국물과 함께",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 연화 소고기장조림은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 10,
+    "reviews": [
+      {
+        "author": "한복지사",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "조가족",
+        "rating": 5,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 4,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-008",
+    "name": "삼킴보조 감자수프",
+    "category": "국/찌개",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조",
+      "저염"
+    ],
+    "price": 4200,
+    "kcal": 180,
+    "protein": 6,
+    "sodium": 160,
+    "servingWeight": 270,
+    "ingredients": [
+      "감자",
+      "양파",
+      "두유",
+      "올리브유"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "냄비에 저으며 5분 데우기",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 삼킴보조 감자수프은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 17,
+    "reviews": [
+      {
+        "author": "조가족",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 3,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 4,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-009",
+    "name": "무른 된장 배추국",
+    "category": "국/찌개",
+    "softness": 2,
+    "purposes": [
+      "저염"
+    ],
+    "price": 3800,
+    "kcal": 80,
+    "protein": 6,
+    "sodium": 300,
+    "servingWeight": 280,
+    "ingredients": [
+      "배추",
+      "된장",
+      "두부",
+      "멸치육수"
+    ],
+    "allergens": [
+      "대두",
+      "생선"
+    ],
+    "heating": "냄비 데우기 6분",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 된장 배추국은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 24,
+    "reviews": [
+      {
+        "author": "윤돌봄",
+        "rating": 3,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 4,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "2단계 · 잇몸으로 으깸",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-010",
+    "name": "부드러운 닭곰탕",
+    "category": "국/찌개",
+    "softness": 2,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 6200,
+    "kcal": 190,
+    "protein": 17,
+    "sodium": 280,
+    "servingWeight": 290,
+    "ingredients": [
+      "닭고기",
+      "무",
+      "대파",
+      "마늘"
+    ],
+    "allergens": [],
+    "heating": "냄비 데우기 8분, 끓기 전 불 조절",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 부드러운 닭곰탕은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 31,
+    "reviews": [
+      {
+        "author": "요양중인딸",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 5,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "김간병",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "2단계 · 잇몸으로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-011",
+    "name": "삼킴편한 미음 크림스프",
+    "category": "국/찌개",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조"
+    ],
+    "price": 4600,
+    "kcal": 170,
+    "protein": 7,
+    "sodium": 220,
+    "servingWeight": 300,
+    "ingredients": [
+      "쌀미음",
+      "우유",
+      "버터",
+      "양송이"
+    ],
+    "allergens": [
+      "우유"
+    ],
+    "heating": "전자레인지 2분 30초 후 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 삼킴편한 미음 크림스프은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 38,
+    "reviews": [
+      {
+        "author": "든든한아들",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "김간병",
+        "rating": 3,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-012",
+    "name": "연두부 흑임자 디저트",
+    "category": "간식/디저트",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조"
+    ],
+    "price": 3500,
+    "kcal": 160,
+    "protein": 8,
+    "sodium": 60,
+    "servingWeight": 310,
+    "ingredients": [
+      "연두부",
+      "흑임자",
+      "올리고당"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "차갑게 또는 상온, 데울 필요 없음",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 연두부 흑임자 디저트은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 45,
+    "reviews": [
+      {
+        "author": "김간병",
+        "rating": 3,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "간식/디저트",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-013",
+    "name": "부드러운 고구마무스",
+    "category": "간식/디저트",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조",
+      "저염"
+    ],
+    "price": 3300,
+    "kcal": 190,
+    "protein": 3,
+    "sodium": 70,
+    "servingWeight": 200,
+    "ingredients": [
+      "고구마",
+      "우유",
+      "꿀"
+    ],
+    "allergens": [
+      "우유"
+    ],
+    "heating": "상온 해동 20분 또는 전자레인지 40초",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 부드러운 고구마무스은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 12,
+    "reviews": [
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "정손녀",
+        "rating": 3,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "간식/디저트",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-014",
+    "name": "무른 단팥 찰떡",
+    "category": "간식/디저트",
+    "softness": 2,
+    "purposes": [],
+    "price": 4000,
+    "kcal": 240,
+    "protein": 5,
+    "sodium": 90,
+    "servingWeight": 210,
+    "ingredients": [
+      "찹쌀",
+      "팥",
+      "설탕"
+    ],
+    "allergens": [],
+    "heating": "전자레인지 30초로 말랑하게",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 단팥 찰떡은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 19,
+    "reviews": [
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "정손녀",
+        "rating": 3,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "최요양사",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "간식/디저트",
+      "2단계 · 잇몸으로 으깸"
+    ]
+  },
+  {
+    "id": "scf-015",
+    "name": "연화 사과당근 갈이",
+    "category": "음료/보충식",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조"
+    ],
+    "price": 3200,
+    "kcal": 120,
+    "protein": 1,
+    "sodium": 40,
+    "servingWeight": 220,
+    "ingredients": [
+      "사과",
+      "당근",
+      "레몬즙"
+    ],
+    "allergens": [],
+    "heating": "흔든 후 바로, 데우지 마세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 연화 사과당근 갈이은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 26,
+    "reviews": [
+      {
+        "author": "정손녀",
+        "rating": 3,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "최요양사",
+        "rating": 4,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "한복지사",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "음료/보충식",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-016",
+    "name": "고단백 두유 보충음료",
+    "category": "음료/보충식",
+    "softness": 4,
+    "purposes": [
+      "고단백",
+      "삼킴보조"
+    ],
+    "price": 3800,
+    "kcal": 220,
+    "protein": 15,
+    "sodium": 130,
+    "servingWeight": 230,
+    "ingredients": [
+      "두유",
+      "분리대두단백",
+      "바나나"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "차갑게 흔들어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 고단백 두유 보충음료은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 33,
+    "reviews": [
+      {
+        "author": "최요양사",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "한복지사",
+        "rating": 5,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "조가족",
+        "rating": 4,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "음료/보충식",
+      "4단계 · 씹지 않아도 됨",
+      "고단백",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-017",
+    "name": "삼킴보조 점도조절 배음료",
+    "category": "음료/보충식",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조",
+      "저염"
+    ],
+    "price": 3600,
+    "kcal": 90,
+    "protein": 1,
+    "sodium": 20,
+    "servingWeight": 240,
+    "ingredients": [
+      "배",
+      "점도증진제",
+      "비타민C"
+    ],
+    "allergens": [],
+    "heating": "저은 뒤 점도 확인 후 섭취",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 삼킴보조 점도조절 배음료은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 40,
+    "reviews": [
+      {
+        "author": "한복지사",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "조가족",
+        "rating": 3,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 4,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "음료/보충식",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-018",
+    "name": "부드러운 전복야채죽",
+    "category": "죽/밥류",
+    "softness": 3,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 8900,
+    "kcal": 200,
+    "protein": 13,
+    "sodium": 300,
+    "servingWeight": 250,
+    "ingredients": [
+      "쌀",
+      "전복",
+      "당근",
+      "부추",
+      "참기름"
+    ],
+    "allergens": [
+      "전복"
+    ],
+    "heating": "중탕 8분 또는 전자레인지 3분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 부드러운 전복야채죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 47,
+    "reviews": [
+      {
+        "author": "조가족",
+        "rating": 3,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 4,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "3단계 · 혀로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-019",
+    "name": "연화 계란야채죽",
+    "category": "죽/밥류",
+    "softness": 3,
+    "purposes": [
+      "저염"
+    ],
+    "price": 5200,
+    "kcal": 180,
+    "protein": 9,
+    "sodium": 200,
+    "servingWeight": 260,
+    "ingredients": [
+      "쌀",
+      "계란",
+      "당근",
+      "양파"
+    ],
+    "allergens": [
+      "계란"
+    ],
+    "heating": "전자레인지 3분 후 저어 드세요",
+    "description": "혀로 눌러 으깰 수 있는 무름. 연화 계란야채죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 14,
+    "reviews": [
+      {
+        "author": "윤돌봄",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 5,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 3,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "3단계 · 혀로 으깸",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-020",
+    "name": "무른 두부스테이크",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 5800,
+    "kcal": 200,
+    "protein": 16,
+    "sodium": 250,
+    "servingWeight": 270,
+    "ingredients": [
+      "두부",
+      "닭안심",
+      "양파",
+      "연근"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "전자레인지 2분 또는 팬 약불 5분",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 두부스테이크은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 21,
+    "reviews": [
+      {
+        "author": "요양중인딸",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 4,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-021",
+    "name": "혀로 으깨는 시금치나물",
+    "category": "반찬",
+    "softness": 3,
+    "purposes": [
+      "저염"
+    ],
+    "price": 3600,
+    "kcal": 70,
+    "protein": 4,
+    "sodium": 150,
+    "servingWeight": 280,
+    "ingredients": [
+      "시금치",
+      "참깨",
+      "간장"
+    ],
+    "allergens": [
+      "대두",
+      "밀"
+    ],
+    "heating": "전자레인지 1분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 혀로 으깨는 시금치나물은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 28,
+    "reviews": [
+      {
+        "author": "든든한아들",
+        "rating": 3,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "김간병",
+        "rating": 4,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "3단계 · 혀로 으깸",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-022",
+    "name": "연화 갈치무조림",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 7400,
+    "kcal": 180,
+    "protein": 17,
+    "sodium": 360,
+    "servingWeight": 290,
+    "ingredients": [
+      "갈치",
+      "무",
+      "고춧가루",
+      "마늘"
+    ],
+    "allergens": [
+      "생선"
+    ],
+    "heating": "중탕 8분, 국물과 함께",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 연화 갈치무조림은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 35,
+    "reviews": [
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 5,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "이며느리",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-023",
+    "name": "부드러운 애호박 새우볶음",
+    "category": "반찬",
+    "softness": 2,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 5600,
+    "kcal": 110,
+    "protein": 10,
+    "sodium": 220,
+    "servingWeight": 300,
+    "ingredients": [
+      "애호박",
+      "새우",
+      "마늘",
+      "들기름"
+    ],
+    "allergens": [
+      "갑각류"
+    ],
+    "heating": "팬 약불 4분 또는 전자레인지 2분",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 부드러운 애호박 새우볶음은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 42,
+    "reviews": [
+      {
+        "author": "박보호자",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "이며느리",
+        "rating": 3,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "정손녀",
+        "rating": 4,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "2단계 · 잇몸으로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-024",
+    "name": "삼킴보조 콩나물 미소국",
+    "category": "국/찌개",
+    "softness": 3,
+    "purposes": [
+      "저염",
+      "삼킴보조"
+    ],
+    "price": 3700,
+    "kcal": 70,
+    "protein": 5,
+    "sodium": 240,
+    "servingWeight": 310,
+    "ingredients": [
+      "콩나물",
+      "미소",
+      "두부",
+      "다시마"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "냄비 데우기 6분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 삼킴보조 콩나물 미소국은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 9,
+    "reviews": [
+      {
+        "author": "이며느리",
+        "rating": 3,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "정손녀",
+        "rating": 4,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "최요양사",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "3단계 · 혀로 으깸",
+      "저염",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-025",
+    "name": "무른 소고기 미역국",
+    "category": "국/찌개",
+    "softness": 2,
+    "purposes": [
+      "고단백",
+      "저염"
+    ],
+    "price": 5400,
+    "kcal": 150,
+    "protein": 14,
+    "sodium": 290,
+    "servingWeight": 200,
+    "ingredients": [
+      "소고기",
+      "미역",
+      "국간장",
+      "참기름"
+    ],
+    "allergens": [
+      "대두",
+      "밀"
+    ],
+    "heating": "냄비 데우기 8분",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 소고기 미역국은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 16,
+    "reviews": [
+      {
+        "author": "정손녀",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "최요양사",
+        "rating": 5,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "한복지사",
+        "rating": 4,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "국/찌개",
+      "2단계 · 잇몸으로 으깸",
+      "고단백",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-026",
+    "name": "연화 밤 단호박 라떼",
+    "category": "음료/보충식",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조"
+    ],
+    "price": 4100,
+    "kcal": 200,
+    "protein": 6,
+    "sodium": 80,
+    "servingWeight": 210,
+    "ingredients": [
+      "밤",
+      "단호박",
+      "우유"
+    ],
+    "allergens": [
+      "우유"
+    ],
+    "heating": "전자레인지 1분 30초 후 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 연화 밤 단호박 라떼은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 23,
+    "reviews": [
+      {
+        "author": "최요양사",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "한복지사",
+        "rating": 3,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "조가족",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "음료/보충식",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-027",
+    "name": "고단백 검은콩 선식",
+    "category": "음료/보충식",
+    "softness": 4,
+    "purposes": [
+      "고단백",
+      "삼킴보조"
+    ],
+    "price": 3900,
+    "kcal": 240,
+    "protein": 16,
+    "sodium": 110,
+    "servingWeight": 220,
+    "ingredients": [
+      "검은콩",
+      "현미",
+      "분리대두단백"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "따뜻한 물에 개어 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 고단백 검은콩 선식은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 30,
+    "reviews": [
+      {
+        "author": "한복지사",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "조가족",
+        "rating": 5,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "음료/보충식",
+      "4단계 · 씹지 않아도 됨",
+      "고단백",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-028",
+    "name": "부드러운 잣죽",
+    "category": "죽/밥류",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조"
+    ],
+    "price": 6600,
+    "kcal": 220,
+    "protein": 7,
+    "sodium": 60,
+    "servingWeight": 230,
+    "ingredients": [
+      "쌀",
+      "잣",
+      "소금소량"
+    ],
+    "allergens": [
+      "견과류"
+    ],
+    "heating": "전자레인지 2분 30초 후 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 부드러운 잣죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 37,
+    "reviews": [
+      {
+        "author": "조가족",
+        "rating": 4,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "윤돌봄",
+        "rating": 5,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 3,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조"
+    ]
+  },
+  {
+    "id": "scf-029",
+    "name": "무른 명란 계란찜",
+    "category": "반찬",
+    "softness": 3,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 4900,
+    "kcal": 130,
+    "protein": 11,
+    "sodium": 380,
+    "servingWeight": 240,
+    "ingredients": [
+      "계란",
+      "명란",
+      "다시육수",
+      "쪽파"
+    ],
+    "allergens": [
+      "계란",
+      "생선"
+    ],
+    "heating": "전자레인지 2분 30초",
+    "description": "혀로 눌러 으깰 수 있는 무름. 무른 명란 계란찜은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 44,
+    "reviews": [
+      {
+        "author": "윤돌봄",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "요양중인딸",
+        "rating": 3,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 4,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "3단계 · 혀로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-030",
+    "name": "삼킴편한 팥 미음",
+    "category": "죽/밥류",
+    "softness": 4,
+    "purposes": [
+      "삼킴보조",
+      "저염"
+    ],
+    "price": 4300,
+    "kcal": 160,
+    "protein": 4,
+    "sodium": 50,
+    "servingWeight": 250,
+    "ingredients": [
+      "팥",
+      "쌀",
+      "올리고당"
+    ],
+    "allergens": [],
+    "heating": "전자레인지 2분 후 저어 드세요",
+    "description": "삼킴을 돕는 무스·퓨레 형태. 삼킴편한 팥 미음은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 11,
+    "reviews": [
+      {
+        "author": "요양중인딸",
+        "rating": 3,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      },
+      {
+        "author": "든든한아들",
+        "rating": 4,
+        "text": "재구매 의사 있습니다. 종류가 더 많아지면 좋겠어요."
+      },
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "4단계 · 씹지 않아도 됨",
+      "삼킴보조",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-031",
+    "name": "연화 브로콜리 감자 매시",
+    "category": "반찬",
+    "softness": 3,
+    "purposes": [
+      "저염"
+    ],
+    "price": 4400,
+    "kcal": 120,
+    "protein": 5,
+    "sodium": 130,
+    "servingWeight": 260,
+    "ingredients": [
+      "브로콜리",
+      "감자",
+      "올리브유"
+    ],
+    "allergens": [],
+    "heating": "전자레인지 2분 또는 중탕 6분",
+    "description": "혀로 눌러 으깰 수 있는 무름. 연화 브로콜리 감자 매시은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 18,
+    "reviews": [
+      {
+        "author": "든든한아들",
+        "rating": 4,
+        "text": "생각보다 양이 넉넉해서 만족스럽습니다."
+      },
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "맛이 심심하지만 건강식이라 이해합니다."
+      },
+      {
+        "author": "박보호자",
+        "rating": 3,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      }
+    ],
+    "tags": [
+      "반찬",
+      "3단계 · 혀로 으깸",
+      "저염"
+    ]
+  },
+  {
+    "id": "scf-032",
+    "name": "부드러운 한우 안심 곤죽",
+    "category": "죽/밥류",
+    "softness": 3,
+    "purposes": [
+      "고단백"
+    ],
+    "price": 9800,
+    "kcal": 260,
+    "protein": 22,
+    "sodium": 300,
+    "servingWeight": 270,
+    "ingredients": [
+      "쌀",
+      "한우안심",
+      "표고버섯",
+      "당근"
+    ],
+    "allergens": [
+      "대두"
+    ],
+    "heating": "중탕 8분 권장, 저어 드세요",
+    "description": "혀로 눌러 으깰 수 있는 무름. 부드러운 한우 안심 곤죽은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4.7,
+    "reviewCount": 25,
+    "reviews": [
+      {
+        "author": "김간병",
+        "rating": 5,
+        "text": "부모님이 부담 없이 드셔서 마음이 놓여요."
+      },
+      {
+        "author": "박보호자",
+        "rating": 4,
+        "text": "데우기만 하면 되어 간병 부담이 크게 줄었습니다."
+      },
+      {
+        "author": "이며느리",
+        "rating": 5,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      }
+    ],
+    "tags": [
+      "죽/밥류",
+      "3단계 · 혀로 으깸",
+      "고단백"
+    ]
+  },
+  {
+    "id": "scf-033",
+    "name": "무른 도라지 배 조림",
+    "category": "간식/디저트",
+    "softness": 2,
+    "purposes": [
+      "저염"
+    ],
+    "price": 3900,
+    "kcal": 130,
+    "protein": 2,
+    "sodium": 70,
+    "servingWeight": 280,
+    "ingredients": [
+      "도라지",
+      "배",
+      "꿀"
+    ],
+    "allergens": [],
+    "heating": "상온 또는 전자레인지 40초",
+    "description": "잇몸으로 눌러 으깰 수 있는 무름. 무른 도라지 배 조림은(는) 씹고 삼키기 편하도록 조리한 가정간편 연화식입니다.",
+    "rating": 4,
+    "reviewCount": 32,
+    "reviews": [
+      {
+        "author": "박보호자",
+        "rating": 3,
+        "text": "간이 세지 않아 어르신 건강에 좋아 보여요."
+      },
+      {
+        "author": "이며느리",
+        "rating": 4,
+        "text": "숟가락으로도 잘 떠지고 목넘김이 편하다고 하십니다."
+      },
+      {
+        "author": "정손녀",
+        "rating": 5,
+        "text": "포장이 깔끔하고 냉동 보관이 편리합니다."
+      }
+    ],
+    "tags": [
+      "간식/디저트",
+      "2단계 · 잇몸으로 으깸",
+      "저염"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+# Dependencies (none required — this is a no-build static site)
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Local server / temp
+*.tmp
+dist/

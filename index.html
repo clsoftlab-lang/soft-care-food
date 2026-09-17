@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>웰니스 개호식품 · Soft Care Food</title>
+  <meta name="description" content="씹기·삼킴이 힘든 어르신과 간병인을 위한 연화식(부드러운 케어식) 온라인 스토어 및 정기구독 데모">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M6 24 q14 12 28 0 v3 a14 7 0 0 1 -28 0 z' fill='%236aa84f'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#view">본문 바로가기</a>
+  <header class="site-header">
+    <div class="brand">
+      <a href="#/" class="brand-link"><span id="logo-slot" class="logo"></span>
+        <span class="brand-name">웰니스 개호식품<small>Soft Care Food</small></span></a>
+    </div>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="상품·재료 검색 (예: 죽, 저염, 두부)" aria-label="상품 검색">
+    </div>
+    <nav class="site-nav" aria-label="주요">
+      <a href="#/survey" class="nav-link">맞춤설문</a>
+      <a href="#/plans" class="nav-link">정기구독</a>
+      <a href="#/wishlist" class="nav-link icon-link">♥<span id="wish-badge" class="badge">0</span></a>
+      <a href="#/cart" class="nav-link icon-link">🛒<span id="cart-badge" class="badge">0</span></a>
+      <button id="bigtext-btn" class="nav-btn" aria-pressed="false" title="큰 글씨 옵션">가<span aria-hidden="true">＋</span></button>
+      <button id="reset-btn" class="nav-btn" title="데모 데이터 초기화">데모 초기화</button>
+    </nav>
+  </header>
+
+  <main id="view" class="view" tabindex="-1">
+    <p class="loading">불러오는 중…</p>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>웰니스 개호식품 (Soft Care Food)</strong> — 데모 서비스</p>
+    <p class="muted small">가상의 상품·리뷰·결제로 구성된 데모입니다. 실제 결제·배송·계정은 없습니다.
+      본 서비스는 의료·영양 처방이 아니며, 삼킴장애 등은 전문가와 상담하세요.</p>
+    <p class="muted small">© 2026 CLSOFTLAB (씨엘소프트랩), Dr. Lee Il-guk (이일국). Apache-2.0.
+      Not an official Anthropic product.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
